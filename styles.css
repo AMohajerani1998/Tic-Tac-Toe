@@ -138,7 +138,10 @@ header p {
     font-size: 6rem;
     font-weight: 600;
 }
-.marked {
+.marked1 {
+    background-color: #2b3cb7;
+}
+.marked2 {
     background-color: #2b3cb7;
 }
 .game-tile div {
