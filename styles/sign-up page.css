@@ -80,3 +80,13 @@
 #sign-up:target {
     display: inherit;
 }
+.warning {
+    background-color: rgb(255, 183, 162);
+    transition: all 0.06s ease-in-out;
+}
+#warning-message {
+    color: red;
+    margin-top: 0;
+    display: none;
+    font-family: 'Montserrat', sans-serif;
+}

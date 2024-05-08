@@ -28,17 +28,17 @@
                 <div id="players-detail-container">
                     <div class="player-detail">
                         <h2>Player 1</h2>
-                        <h1>Max</h1>
+                        <h1 id="player1-name">Player name</h1>
                         <span>X</span>
-                        <button id="edit-player1-info" class="edit-player-info">
+                        <button id="edit-player1-info" class="edit-player-info" data-playerid="1">
                             Edit
                         </button>
                     </div>
                     <div class="player-detail">
                         <h2>Player 2</h2>
-                        <h1>AAA</h1>
+                        <h1 id="player2-name">Player name</h1>
                         <span>O</span>
-                        <button id="edit-player2-info" class="edit-player-info">
+                        <button id="edit-player2-info" class="edit-player-info" data-playerid="2">
                             Edit
                         </button>
                     </div>
@@ -66,12 +66,13 @@
             <section id="sign-up">
                 <div id="sign-up-container">
                     <h1>Choose your name</h1>
-                    <form id="player-form-input">
+                    <form>
                         <label for="player-name">Player name</label>
                         <input type="text" name="player-name" id="player-name" />
+                        <p id="warning-message">Please enter a valid name!</p>
                         <div id="buttons-container">
-                            <button id="cancel-signup" type="button">Cancel</button>
-                            <button id="submit-signup" type="submit">
+                            <button type="reset" id="cancel-signup">Cancel</button>
+                            <button type="submit" id="submit-signup">
                                 Confirm
                             </button>
                         </div>

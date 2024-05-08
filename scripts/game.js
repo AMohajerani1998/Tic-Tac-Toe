@@ -1,4 +1,3 @@
-let e = 0;
 function tileClick(event) {
     e++;
     targetContent = event.target.innerHTML;
