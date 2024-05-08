@@ -16,7 +16,7 @@
     box-shadow: 1px 1px 4px rgb(159, 159, 159);
     width: 100%;
     margin: 0 2rem;
-    padding: 0.25rem 1rem;
+    padding: 0.25rem 1rem 1rem 1rem;
 }
 .player-detail h2 {
     font-family: "Kanit", sans-serif;
@@ -37,17 +37,20 @@
     font-size: 3rem;
     font-weight: 600;
 }
-.player-detail a {
+.edit-player-info {
+    border: none;
+    background-color: transparent;
     font-family: "Roboto Mono";
-    margin: 0.5rem 0 1rem 0;
     color: #2b3cb7;
     text-decoration: none;
+    margin: auto;
     display: block;
 }
-.player-detail a:hover {
+.edit-player-info:hover {
     color: #1e2a80;
+    cursor: pointer;
 }
-#game-menu-container button {
+#new-game-button {
     background-color: white;
     border: none;
     background-color: #2b3cb7;
@@ -56,7 +59,7 @@
     text-transform: capitalize;
     color: white;
 }
-#game-menu-container button:hover {
+#new-game-button:hover {
     cursor: pointer;
     background-color: #0a1da7;
 }

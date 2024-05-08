@@ -33,3 +33,6 @@
     background-color: #2b3cb7;
     cursor: pointer;
 }
+.disabled:hover {
+    cursor: default;
+}
