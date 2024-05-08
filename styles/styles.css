@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #3245d8;
+    height: 13rem;
+    box-sizing: border-box;
+    text-align: center;
+    color: white;
+    padding: 3.5rem;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+/* header */
+header h1 {
+    margin: 0 0 2rem 0;
+    font-family: "Kanit", sans-serif;
+    letter-spacing: 0.075rem;
+    text-transform: capitalize;
+}
+header p {
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.1rem;
+}

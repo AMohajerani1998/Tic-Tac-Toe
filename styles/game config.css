@@ -1,0 +1,35 @@
+#game-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem;
+    width: 30rem;
+    height: 30rem;
+    margin: 2rem auto;
+}
+.game-tile {
+    background-color: rgb(134, 134, 255);
+    height: 100%;
+    width: 100%;
+    box-shadow: 1px 1px 4px grey;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: "Kanit", sans-serif;
+    font-size: 6rem;
+    font-weight: 600;
+}
+.marked1 {
+    background-color: #2b3cb7;
+}
+.marked2 {
+    background-color: #2b3cb7;
+}
+.game-tile div {
+    position: absolute;
+}
+.game-tile:hover {
+    background-color: #2b3cb7;
+    cursor: pointer;
+}

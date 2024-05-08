@@ -1,0 +1,68 @@
+#sign-up {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.702);
+    align-content: center;
+}
+#sign-up-container {
+    width: 45rem;
+    background-color: white;
+    margin: auto;
+    text-align: center;
+    padding: 2rem 0 1rem 0;
+}
+#sign-up-container form {
+    display: flex;
+    flex-direction: column;
+}
+#sign-up-container h1 {
+    font-family: "Kanit", sans-serif;
+    font-weight: 550;
+    font-size: 2rem;
+    margin: 0;
+}
+#sign-up-container label {
+    font-family: "Kanit", sans-serif;
+    font-weight: 600;
+}
+#sign-up-container button {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    background-color: white;
+    border: none;
+    background-color: #2b3cb7;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    width: 7rem;
+    margin: 0 0 0 1rem;
+    text-transform: capitalize;
+    color: white;
+}
+#sign-up-container a {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    margin: 0.5rem 0 1rem 0;
+    color: #712bb7;
+    text-decoration: none;
+}
+#sign-up-container a:hover {
+    color: #522183;
+}
+#player-name {
+    width: 15rem;
+    height: 1.5rem;
+    margin: 1rem auto 1rem auto;
+    border: 2px solid rgb(187, 187, 187);
+    border-radius: 4px;
+    padding: 0 0.3rem 0 0.3rem;
+}
+#player-name:focus {
+    outline: none;
+}
+#sign-up:target {
+    display: inherit;
+}

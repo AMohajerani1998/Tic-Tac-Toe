@@ -1,0 +1,62 @@
+#game-menu-container {
+    width: 40rem;
+    margin: auto;
+    text-align: center;
+}
+#players-detail-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 3rem 0 3rem 0;
+    height: 70%;
+}
+.player-detail {
+    background-color: rgb(217 217 255);
+    border-radius: 6px;
+    box-shadow: 1px 1px 4px rgb(159, 159, 159);
+    width: 100%;
+    margin: 0 2rem;
+    padding: 0.25rem 1rem;
+}
+.player-detail h2 {
+    font-family: "Kanit", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.11rem;
+    margin: 1rem 0 1rem 0;
+}
+.player-detail h1 {
+    font-family: "Kanit", sans-serif;
+    font-size: 1.5rem;
+    margin: 0;
+    margin: 0.25rem 0 0 0;
+    color: #2b3cb7;
+}
+.player-detail span {
+    font-family: "Kanit", sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+}
+.player-detail a {
+    font-family: "Roboto Mono";
+    margin: 0.5rem 0 1rem 0;
+    color: #2b3cb7;
+    text-decoration: none;
+    display: block;
+}
+.player-detail a:hover {
+    color: #1e2a80;
+}
+#game-menu-container button {
+    background-color: white;
+    border: none;
+    background-color: #2b3cb7;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-transform: capitalize;
+    color: white;
+}
+#game-menu-container button:hover {
+    cursor: pointer;
+    background-color: #0a1da7;
+}

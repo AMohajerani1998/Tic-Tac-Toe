@@ -1,0 +1,19 @@
+#anouncer-container {
+    display: none;
+    background-color: #000e7b;
+    width: 50rem;
+    height: 6rem;
+    margin: 2rem auto;
+    text-align: center;
+    color: white;
+    padding: 2rem 0;
+    border-radius: 6px;
+    box-shadow: 1px 1px px grey;
+}
+#anouncer-container h1 {
+    margin: 0 auto 2rem 0;
+    font-family: "Kanit", sans-serif;
+}
+#anouncer-container p {
+    font-family: "Montserrat", sans-serif;
+}
