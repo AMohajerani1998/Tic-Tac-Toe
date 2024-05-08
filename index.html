@@ -26,7 +26,7 @@
         <main>
             <section id="game-menu-container">
                 <div id="players-detail-container">
-                    <div class="player-detail">
+                    <div id="player1-detail" class="player-detail">
                         <h2>Player 1</h2>
                         <h1 id="player1-name">Player name</h1>
                         <span>X</span>
@@ -34,7 +34,7 @@
                             Edit
                         </button>
                     </div>
-                    <div class="player-detail">
+                    <div id="player2-detail" class="player-detail">
                         <h2>Player 2</h2>
                         <h1 id="player2-name">Player name</h1>
                         <span>O</span>
@@ -44,22 +44,24 @@
                     </div>
                 </div>
                 <button id="new-game-button">Start New Game</button>
+                <p id="new-game-error" class="warning-text">Please enter player name/s</p>
             </section>
             <section id="anouncer-container">
                 <h1>You won, Max!</h1>
                 <p>Click "Start New Game" above, to start a new game!</p>
             </section>
-            <section>
-                <ul id="game-container">
-                    <li class="game-tile"></li>
-                    <li class="game-tile"></li>
-                    <li class="game-tile"></li>
-                    <li class="game-tile"></li>
-                    <li class="game-tile"></li>
-                    <li class="game-tile"></li>
-                    <li class="game-tile"></li>
-                    <li class="game-tile"></li>
-                    <li class="game-tile"></li>
+            <section id="game-container">
+                <h3>It's your turn <span id="active-player-name"></span>!</h3>
+                <ul id="game-board">
+                    <li class="game-tile" data-row="1" data-col="1"></li>
+                    <li class="game-tile" data-row="1" data-col="2"></li>
+                    <li class="game-tile" data-row="1" data-col="3"></li>
+                    <li class="game-tile" data-row="2" data-col="1"></li>
+                    <li class="game-tile" data-row="2" data-col="2"></li>
+                    <li class="game-tile" data-row="2" data-col="3"></li>
+                    <li class="game-tile" data-row="3" data-col="1"></li>
+                    <li class="game-tile" data-row="3" data-col="2"></li>
+                    <li class="game-tile" data-row="3" data-col="3"></li>
                 </ul>
             </section>
             <div id="sign-up-background"></div>
@@ -69,7 +71,7 @@
                     <form>
                         <label for="player-name">Player name</label>
                         <input type="text" name="player-name" id="player-name" />
-                        <p id="warning-message">Please enter a valid name!</p>
+                        <p id="warning-message" class="warning-text">Please enter a valid name!</p>
                         <div id="buttons-container">
                             <button type="reset" id="cancel-signup">Cancel</button>
                             <button type="submit" id="submit-signup">

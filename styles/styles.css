@@ -25,3 +25,8 @@ header p {
     font-family: "Roboto", sans-serif;
     letter-spacing: 0.1rem;
 }
+.warning-text {
+    color: red;
+    margin-top: 0;
+    font-family: 'Montserrat', sans-serif;
+}

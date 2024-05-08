@@ -14,7 +14,7 @@ function closeSignUp() {
 }
 function cancelSignUp(event) {
     event.preventDefault();
-    closeSignUp;
+    closeSignUp();
 }
 function submitPlayerData(event) {
     event.preventDefault();
@@ -32,4 +32,7 @@ function submitPlayerData(event) {
     players[editedPlayer - 1].Name = playerName;
     console.log(players)
     closeSignUp();
+    const UpdatedPlayerDetailBox = document.getElementById('player'+editedPlayer+'-detail');
+    console.log(UpdatedPlayerDetailBox)
+    UpdatedPlayerDetailBox.classList.remove('warning-box')
 }

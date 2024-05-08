@@ -3,11 +3,14 @@
     margin: auto;
     text-align: center;
 }
+#game-menu-container .warning-text {
+    margin: 1rem 0;
+}
 #players-detail-container {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin: 3rem 0 3rem 0;
+    margin: 3rem 0 2rem 0;
     height: 70%;
 }
 .player-detail {
@@ -62,4 +65,11 @@
 #new-game-button:hover {
     cursor: pointer;
     background-color: #0a1da7;
+}
+.warning-box {
+    background-color: #ff9595;
+    transition: all 0.06s ease-in-out;
+}
+#new-game-error {
+    display: none;
 }
