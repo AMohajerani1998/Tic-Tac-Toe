@@ -31,13 +31,51 @@ function tileClick(event) {
     const targetContent = event.target.textContent;
     const targetRow = event.target.dataset.row - 1;
     const targetCol = event.target.dataset.col - 1;
-    if (targetTagName == "LI") {
-        if (!targetContent) {
-            event.target.innerHTML = PlayerSymbol;
-            event.target.classList.add("marked");
-            event.target.classList.add("disabled");
-            gameDataBoard[targetRow][targetCol] = activePlayer + 1
-            activePlayerTurn();
+    if (!gameFinished) {
+        if (targetTagName == "LI") {
+            if (!targetContent) {
+                event.target.innerHTML = PlayerSymbol;
+                event.target.classList.add("marked");
+                event.target.classList.add("disabled");
+                gameDataBoard[targetRow][targetCol] = activePlayer + 1;
+                let winningPlayer = activePlayer + 1;
+                if (
+                    (gameDataBoard[0][0] == winningPlayer &&
+                        gameDataBoard[1][1] == winningPlayer &&
+                        gameDataBoard[2][2] == winningPlayer) ||
+                    (gameDataBoard[0][2] == winningPlayer &&
+                        gameDataBoard[1][1] == winningPlayer &&
+                        gameDataBoard[2][0] == winningPlayer) ||
+                    (gameDataBoard[0][0] == winningPlayer &&
+                        gameDataBoard[0][1] == winningPlayer &&
+                        gameDataBoard[0][2] == winningPlayer) ||
+                    (gameDataBoard[1][0] == winningPlayer &&
+                        gameDataBoard[1][1] == winningPlayer &&
+                        gameDataBoard[1][2] == winningPlayer) ||
+                    (gameDataBoard[2][0] == winningPlayer &&
+                        gameDataBoard[2][1] == winningPlayer &&
+                        gameDataBoard[2][2] == winningPlayer) ||
+                    (gameDataBoard[0][0] == winningPlayer &&
+                        gameDataBoard[1][0] == winningPlayer &&
+                        gameDataBoard[2][0] == winningPlayer) ||
+                    (gameDataBoard[0][1] == winningPlayer &&
+                        gameDataBoard[1][1] == winningPlayer &&
+                        gameDataBoard[2][1] == winningPlayer) ||
+                    (gameDataBoard[0][2] == winningPlayer &&
+                        gameDataBoard[1][2] == winningPlayer &&
+                        gameDataBoard[2][2] == winningPlayer)
+                ) {
+                    console.log("player " + winningPlayer + " won!");
+                    gameFinished = true;
+                    for (tile of gameTiles) {
+                        const tileContent = tile.textContent;
+                        if (tileContent == "") {
+                            tile.classList.add("lock");
+                        }
+                    }
+                }
+                activePlayerTurn();
+            }
         }
     }
 }
@@ -59,7 +97,9 @@ function newGame() {
     }
     gameContainer.style.display = "block";
     for (tile of gameTiles) {
-        tile.innerHTML = "";
         tile.classList = "game-tile";
+        tile.textContent = '';
+        gameDataBoard = [[0,0,0], [0,0,0], [0,0,0]]
+        gameFinished = false;
     }
 }

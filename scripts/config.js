@@ -1,7 +1,6 @@
 function signUp(event) {
     event.preventDefault();
     editedPlayer = +event.target.dataset.playerid; //+'1' => 1
-    console.log(editedPlayer);
     signUpModalPage.style.display = "inherit";
     signUpBackground.style.display = "inherit";
 }
@@ -30,9 +29,7 @@ function submitPlayerData(event) {
     );
     updatedPlayerData.textContent = playerName;
     players[editedPlayer - 1].Name = playerName;
-    console.log(players)
     closeSignUp();
     const UpdatedPlayerDetailBox = document.getElementById('player'+editedPlayer+'-detail');
-    console.log(UpdatedPlayerDetailBox)
     UpdatedPlayerDetailBox.classList.remove('warning-box')
 }

@@ -45,3 +45,7 @@
 .disabled:hover {
     cursor: default;
 }
+.lock:hover {
+    background-color: rgb(134, 134, 255);
+    cursor: default;
+}

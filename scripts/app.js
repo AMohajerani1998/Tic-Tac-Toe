@@ -1,5 +1,6 @@
 let e = 0;
 let i = 0;
+let gameFinished = false;
 let editedPlayer = 0;
 let activePlayer = 0;
 let gameDataBoard = [
