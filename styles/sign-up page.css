@@ -23,6 +23,26 @@
     text-align: center;
     padding: 2rem 0 1rem 0;
 }
+@media (max-width: 480px){
+    #sign-up-container {
+        width: 20rem;
+        padding: 1.5rem 0;
+    }
+    #sign-up-container h1 {
+        font-size: 1.25rem !important;
+    }
+    #sign-up-container label {
+        font-size: 1rem !important;
+    }
+    #sign-up-container input {
+        width: 12rem;
+    }
+    #sign-up-container button {
+        width: 5rem;
+        font-size: 0.75rem;
+        margin: 0 0.1rem;
+    }
+}
 #sign-up-container form {
     display: flex;
     flex-direction: column;

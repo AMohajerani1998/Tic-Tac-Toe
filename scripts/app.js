@@ -31,6 +31,7 @@ const playerInputWarningMessage = document.getElementById("warning-message");
 
 const signUpBackground = document.getElementById("sign-up-background");
 const signUpModalPage = document.getElementById("sign-up");
+const anouncerContainer = document.getElementById('anouncer-container')
 
 const gameTiles = document.querySelectorAll(".game-tile");
 
@@ -38,6 +39,7 @@ const player1DetailContainer = document.getElementById("player1-detail");
 const player2DetailContainer = document.getElementById("player2-detail");
 const newGameErrorMessage = document.getElementById("new-game-error");
 const activePlayerName = document.getElementById("active-player-name");
+const winnerName = document.getElementById('winner-name')
 const gameContainer = document.getElementById("game-container");
 
 

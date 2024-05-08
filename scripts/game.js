@@ -66,7 +66,9 @@ function tileClick(event) {
                         gameDataBoard[2][2] == winningPlayer)
                 ) {
                     console.log("player " + winningPlayer + " won!");
+                    winnerName.textContent = players[activePlayer].Name;
                     gameFinished = true;
+                    anouncerContainer.style.display = "block";
                     for (tile of gameTiles) {
                         const tileContent = tile.textContent;
                         if (tileContent == "") {
@@ -98,8 +100,13 @@ function newGame() {
     gameContainer.style.display = "block";
     for (tile of gameTiles) {
         tile.classList = "game-tile";
-        tile.textContent = '';
-        gameDataBoard = [[0,0,0], [0,0,0], [0,0,0]]
+        tile.textContent = "";
+        anouncerContainer.style.display = "none";
+        gameDataBoard = [
+            [0, 0, 0],
+            [0, 0, 0],
+            [0, 0, 0],
+        ];
         gameFinished = false;
     }
 }

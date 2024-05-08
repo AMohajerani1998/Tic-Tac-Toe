@@ -1,7 +1,8 @@
 #anouncer-container {
     display: none;
     background-color: #000e7b;
-    width: 50rem;
+    width: 40rem;
+    max-width: 40rem;
     height: 6rem;
     margin: 2rem auto;
     text-align: center;
@@ -16,4 +17,21 @@
 }
 #anouncer-container p {
     font-family: "Montserrat", sans-serif;
+}
+@media (max-width: 480px){
+    #anouncer-container{
+        margin: 1rem auto 0.5rem auto;
+        width: 20rem;
+        box-sizing: border-box;
+        padding: 0.5rem 2rem;
+        text-wrap: wrap;
+    }
+    #anouncer-container h1 {
+        margin: 0;
+        font-size: 1.25rem;
+        
+    }
+    #anouncer-container p {
+        font-size: 0.7rem !important;
+    }
 }
