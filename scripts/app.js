@@ -3,6 +3,7 @@ let i = 0;
 let gameFinished = false;
 let editedPlayer = 0;
 let activePlayer = 0;
+let roundNumber = 0;
 let gameDataBoard = [
     [0, 0, 0],
     [0, 0, 0],

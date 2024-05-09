@@ -39,28 +39,44 @@ function tileClick(event) {
                 event.target.classList.add("disabled");
                 gameDataBoard[targetRow][targetCol] = activePlayer + 1;
                 let winningPlayer = activePlayer + 1;
-                for (let n = 0; n < 3; n++) {
-                    if (
-                        gameDataBoard[n][0] > 0 && gameDataBoard[n][0] == gameDataBoard[n][1] && gameDataBoard[n][1] == gameDataBoard[n][2] ||
-                        gameDataBoard[0][n] > 0 && gameDataBoard[0][n] == gameDataBoard[1][n] && gameDataBoard[1][n] == gameDataBoard[2][n] ||
-                        gameDataBoard[0][0] > 0 && gameDataBoard[0][0] == gameDataBoard[1][1] && gameDataBoard[1][1] == gameDataBoard[2][2] ||
-                        gameDataBoard[2][0] > 0 && gameDataBoard[2][0] == gameDataBoard[1][1] && gameDataBoard[1][1] == gameDataBoard[0][2]
-                    ) {
-                        console.log("player " + winningPlayer + " won!");
-                        winnerName.textContent = players[activePlayer].Name;
-                        gameFinished = true;
-                        anouncerContainer.style.display = "block";
-                        for (tile of gameTiles) {
-                            const tileContent = tile.textContent;
-                            if (tileContent == "") {
-                                tile.classList.add("lock");
-                            }
-                        }
-                    }
-                    activePlayerTurn();
-                }
+                WinnerCheck(winningPlayer);
+                activePlayerTurn();
+                roundNumber++;
+                console.log(roundNumber);
+                drawCheck();
             }
         }
+    }
+}
+function WinnerCheck(winningPlayer) {
+    for (let n = 0; n < 3; n++) {
+        if (
+            (gameDataBoard[n][0] > 0 &&
+                gameDataBoard[n][0] == gameDataBoard[n][1] &&
+                gameDataBoard[n][1] == gameDataBoard[n][2]) ||
+            (gameDataBoard[0][n] > 0 &&
+                gameDataBoard[0][n] == gameDataBoard[1][n] &&
+                gameDataBoard[1][n] == gameDataBoard[2][n]) ||
+            (gameDataBoard[0][0] > 0 &&
+                gameDataBoard[0][0] == gameDataBoard[1][1] &&
+                gameDataBoard[1][1] == gameDataBoard[2][2]) ||
+            (gameDataBoard[2][0] > 0 &&
+                gameDataBoard[2][0] == gameDataBoard[1][1] &&
+                gameDataBoard[1][1] == gameDataBoard[0][2])
+        ) {
+            winnerName.innerHTML =
+                "You won, <span>" + players[activePlayer].Name + "</span>!";
+            gameFinished = true;
+            anouncerContainer.style.display = "block";
+            gameOver();
+            return;
+        }
+    }
+}
+function drawCheck() {
+    if (roundNumber == 9 && !gameFinished) {
+        anouncerContainer.style.display = "block";
+        anouncerContainer.firstElementChild.textContent = "The game is draw";
     }
 }
 function newGame() {
@@ -77,6 +93,7 @@ function newGame() {
         return;
     } else {
         newGameErrorMessage.style.display = "none";
+        roundNumber = 0;
         activePlayerTurn();
     }
     gameContainer.style.display = "block";
@@ -90,5 +107,13 @@ function newGame() {
             [0, 0, 0],
         ];
         gameFinished = false;
+    }
+}
+function gameOver() {
+    for (tile of gameTiles) {
+        const tileContent = tile.textContent;
+        if (tileContent == "") {
+            tile.classList.add("lock");
+        }
     }
 }
