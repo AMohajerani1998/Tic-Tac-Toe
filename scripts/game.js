@@ -39,44 +39,26 @@ function tileClick(event) {
                 event.target.classList.add("disabled");
                 gameDataBoard[targetRow][targetCol] = activePlayer + 1;
                 let winningPlayer = activePlayer + 1;
-                if (
-                    (gameDataBoard[0][0] == winningPlayer &&
-                        gameDataBoard[1][1] == winningPlayer &&
-                        gameDataBoard[2][2] == winningPlayer) ||
-                    (gameDataBoard[0][2] == winningPlayer &&
-                        gameDataBoard[1][1] == winningPlayer &&
-                        gameDataBoard[2][0] == winningPlayer) ||
-                    (gameDataBoard[0][0] == winningPlayer &&
-                        gameDataBoard[0][1] == winningPlayer &&
-                        gameDataBoard[0][2] == winningPlayer) ||
-                    (gameDataBoard[1][0] == winningPlayer &&
-                        gameDataBoard[1][1] == winningPlayer &&
-                        gameDataBoard[1][2] == winningPlayer) ||
-                    (gameDataBoard[2][0] == winningPlayer &&
-                        gameDataBoard[2][1] == winningPlayer &&
-                        gameDataBoard[2][2] == winningPlayer) ||
-                    (gameDataBoard[0][0] == winningPlayer &&
-                        gameDataBoard[1][0] == winningPlayer &&
-                        gameDataBoard[2][0] == winningPlayer) ||
-                    (gameDataBoard[0][1] == winningPlayer &&
-                        gameDataBoard[1][1] == winningPlayer &&
-                        gameDataBoard[2][1] == winningPlayer) ||
-                    (gameDataBoard[0][2] == winningPlayer &&
-                        gameDataBoard[1][2] == winningPlayer &&
-                        gameDataBoard[2][2] == winningPlayer)
-                ) {
-                    console.log("player " + winningPlayer + " won!");
-                    winnerName.textContent = players[activePlayer].Name;
-                    gameFinished = true;
-                    anouncerContainer.style.display = "block";
-                    for (tile of gameTiles) {
-                        const tileContent = tile.textContent;
-                        if (tileContent == "") {
-                            tile.classList.add("lock");
+                for (let n = 0; n < 3; n++) {
+                    if (
+                        gameDataBoard[n][0] > 0 && gameDataBoard[n][0] == gameDataBoard[n][1] && gameDataBoard[n][1] == gameDataBoard[n][2] ||
+                        gameDataBoard[0][n] > 0 && gameDataBoard[0][n] == gameDataBoard[1][n] && gameDataBoard[1][n] == gameDataBoard[2][n] ||
+                        gameDataBoard[0][0] > 0 && gameDataBoard[0][0] == gameDataBoard[1][1] && gameDataBoard[1][1] == gameDataBoard[2][2] ||
+                        gameDataBoard[2][0] > 0 && gameDataBoard[2][0] == gameDataBoard[1][1] && gameDataBoard[1][1] == gameDataBoard[0][2]
+                    ) {
+                        console.log("player " + winningPlayer + " won!");
+                        winnerName.textContent = players[activePlayer].Name;
+                        gameFinished = true;
+                        anouncerContainer.style.display = "block";
+                        for (tile of gameTiles) {
+                            const tileContent = tile.textContent;
+                            if (tileContent == "") {
+                                tile.classList.add("lock");
+                            }
                         }
                     }
+                    activePlayerTurn();
                 }
-                activePlayerTurn();
             }
         }
     }

@@ -1,5 +1,5 @@
 #game-container {
-    display: none;
+    display: block;
     text-align: center;
 }
 #game-container h3 {
